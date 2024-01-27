@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefHeight="300.0" prefWidth="350.0" stylesheets="@../com/hms/Style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controller.customer.PaymentScreenController">
+
+    <center>
+        <AnchorPane maxHeight="300.0" maxWidth="350.0" prefHeight="300" prefWidth="350.0" BorderPane.alignment="CENTER">
+
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="80.0" layoutY="22.0" style="-fx-text-fill : white;-fx-border-color: #c1c3c9;-fx-border-width: 0px 0px 2px 0px;" text="Payment Details" textAlignment="CENTER" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="80.0">
+                <font>
+                    <Font size="18.0" />
+                </font>
+            </Label>
+
+            <GridPane alignment="CENTER" hgap="10" layoutX="80.0" layoutY="70.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0">
+                <columnConstraints>
+                    <ColumnConstraints maxWidth="200.0" minWidth="10.0" prefWidth="150" />
+                    <ColumnConstraints maxWidth="150.0" minWidth="10.0" prefWidth="150" />
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                </rowConstraints>
+
+                <StackPane alignment="CENTER_RIGHT" styleClass="gridPaneNode">
+                    <Label styleClass="userProfileLabels" text="Card Number" textAlignment="LEFT" StackPane.alignment="CENTER_LEFT" />
+                </StackPane>
+
+                <StackPane alignment="CENTER_RIGHT" styleClass="gridPaneNode" GridPane.columnSpan="2" GridPane.rowIndex="1">
+                    <TextField fx:id="cardNumber" onKeyTyped="#handleKeyTyped" styleClass="searchButton">
+                  <StackPane.margin>
+                     <Insets right="10.0" />
+                  </StackPane.margin></TextField>
+                </StackPane>
+
+                <StackPane alignment="CENTER_RIGHT" styleClass="gridPaneNode" GridPane.rowIndex="2">
+                    <Label prefHeight="18.0" styleClass="userProfileLabels" text="Expiry Date" StackPane.alignment="CENTER_LEFT" />
+                </StackPane>
+
+                <StackPane alignment="CENTER_LEFT" styleClass="gridPaneNode" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                    <Label prefHeight="18.0" styleClass="userProfileLabels" text="CVC" />
+                </StackPane>
+
+                <StackPane alignment="CENTER_RIGHT" styleClass="gridPaneNode" GridPane.rowIndex="3">
+                    <DatePicker fx:id="expiryDate" maxHeight="3.0" prefHeight="5.0" prefWidth="110.0" style="-fx-border-radius:5px;" StackPane.alignment="CENTER_LEFT">
+                        <StackPane.margin>
+                            <Insets />
+                        </StackPane.margin>
+                    </DatePicker>
+                </StackPane>
+
+                <StackPane alignment="CENTER_LEFT" styleClass="gridPaneNode" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                    <TextField fx:id="cvcNumber" maxWidth="60" onKeyTyped="#handleKeyTyped" styleClass="searchButton" />
+                </StackPane>
+
+                <StackPane alignment="CENTER_LEFT" prefHeight="30.0" styleClass="gridPaneNode" GridPane.columnSpan="2" GridPane.rowIndex="4">
+                    <Label fx:id="payAmountLabel" prefHeight="18.0" styleClass="userProfileLabels" text="Amount to Pay : " StackPane.alignment="BOTTOM_LEFT" />
+                </StackPane>
+
+                <StackPane alignment="CENTER" prefHeight="30.0" styleClass="gridPaneNode" GridPane.columnSpan="2" GridPane.rowIndex="5">
+                    <Button fx:id="payButton" minWidth="50.0" mnemonicParsing="false" onAction="#handlePayButton" styleClass="searchButton" text="Pay" StackPane.alignment="BOTTOM_CENTER">
+                        <StackPane.margin>
+                            <Insets top="10.0" />
+                        </StackPane.margin>
+                    </Button>
+                </StackPane>
+
+                <StackPane alignment="CENTER" prefHeight="30.0" styleClass="gridPaneNode" GridPane.columnSpan="2" GridPane.rowIndex="6">
+                    <Label fx:id="errorMsg" alignment="CENTER" style="-fx-text-fill : #fff; -fx-font-size : 12;" text="Field cannot be empty" textAlignment="CENTER" visible="false" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="235.0" StackPane.alignment="BOTTOM_CENTER" />
+                </StackPane>
+
+            </GridPane>
+
+
+        </AnchorPane>
+    </center>
+
+</BorderPane>

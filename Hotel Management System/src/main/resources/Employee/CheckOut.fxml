@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefHeight="650.0" prefWidth="900.0" stylesheets="@../com/hms/Style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controller.employee.CheckOutController">
+
+    <left>
+        <AnchorPane prefHeight="650.0" style="-fx-background-color: #0f0f0f;" BorderPane.alignment="CENTER">
+            <fx:include source="EmployeeDashboardNavbar.fxml" style="-fx-margin-top:20px;" />
+        </AnchorPane>
+    </left>
+
+    <center>
+        <BorderPane prefHeight="650.0" style="-fx-background-image: url('../images/hotel-room.jpg');" BorderPane.alignment="CENTER">
+            <top>
+                <fx:include source="../com/hms/UserBar.fxml" />
+            </top>
+
+            <center>
+
+                <BorderPane BorderPane.alignment="CENTER">
+                    <top>
+                        <AnchorPane maxHeight="300.0" prefWidth="730.0" BorderPane.alignment="CENTER">
+                            <Label fx:id="message" alignment="CENTER" contentDisplay="CENTER" layoutX="290.0" layoutY="70.0" style="-fx-text-fill : white" text="Check Out" textAlignment="CENTER" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="30.0">
+                                <font>
+                                    <Font size="16.0" />
+                                </font>
+                            </Label>
+
+                            <GridPane alignment="CENTER" hgap="20" layoutX="80.0" layoutY="56.0" prefHeight="250.0" prefWidth="550.0" style="-fx-border-color: #c1c3c9; -fx-border-width: 2px; -fx-border-radius: 20px;" vgap="10.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="60.0">
+                                <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="255" minWidth="10.0" prefWidth="210" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="255" minWidth="10.0" prefWidth="110" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                                    <RowConstraints maxHeight="30" minHeight="10.0" prefHeight="30" />
+                                    <RowConstraints maxHeight="30" minHeight="10.0" prefHeight="30" />
+                                    <RowConstraints maxHeight="30" minHeight="10.0" prefHeight="30" />
+                                    <RowConstraints maxHeight="30" minHeight="10.0" prefHeight="30" />
+                                </rowConstraints>
+
+                                <StackPane styleClass="gridPaneNode">
+                                    <Label fx:id="reservationIdLabel" style="-fx-font-size:12; -fx-text-fill : white;" text="Reservation Id : " StackPane.alignment="BOTTOM_LEFT" />
+                                    <GridPane.margin>
+                                        <Insets left="40.0" />
+                                    </GridPane.margin>
+                                </StackPane>
+
+                                <StackPane styleClass="gridPaneNode" GridPane.rowIndex="1">
+                                    <Label fx:id="customerIdLabel" style="-fx-font-size:12; -fx-text-fill : white;" text="Customer Id : " StackPane.alignment="BOTTOM_LEFT" />
+                                    <GridPane.margin>
+                                        <Insets left="40.0" />
+                                    </GridPane.margin>
+                                </StackPane>
+
+
+                                <StackPane styleClass="gridPaneNode" GridPane.rowIndex="2">
+                                    <Label fx:id="custNameLabel" style="-fx-font-size:12; -fx-text-fill : white;" text="Name : " StackPane.alignment="BOTTOM_LEFT" />
+                                    <padding>
+                                        <Insets left="40.0" />
+                                    </padding>
+                                </StackPane>
+
+                                <StackPane styleClass="gridPaneNode" GridPane.columnIndex="1">
+                                    <Label fx:id="roomNoLabel" style="-fx-font-size:12; -fx-text-fill : white;" text="Room No : " StackPane.alignment="BOTTOM_LEFT" />
+                                    <GridPane.margin>
+                                        <Insets right="20.0" />
+                                    </GridPane.margin>
+                                </StackPane>
+
+                                <StackPane styleClass="gridPaneNode" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                    <Label fx:id="roomTypeLabel" style="-fx-font-size:12; -fx-text-fill : white;" text="Room Type : " StackPane.alignment="BOTTOM_LEFT" />
+                                    <GridPane.margin>
+                                        <Insets right="20.0" />
+                                    </GridPane.margin>
+                                </StackPane>
+
+
+                                <StackPane styleClass="gridPaneNode" GridPane.rowIndex="3">
+                                    <Label fx:id="checkInTimeLabel" style="-fx-font-size:12; -fx-text-fill : white;" text="Check-In Time : " StackPane.alignment="BOTTOM_LEFT" />
+                                    <GridPane.margin>
+                                        <Insets left="40.0" />
+                                    </GridPane.margin>
+                                </StackPane>
+
+                                <StackPane styleClass="gridPaneNode" GridPane.rowIndex="4">
+                                    <Label fx:id="checkOutTimeLabel" style="-fx-font-size:12; -fx-text-fill : white;" text="Check-Out Time : " StackPane.alignment="BOTTOM_LEFT" />
+                                    <GridPane.margin>
+                                        <Insets left="40.0" />
+                                    </GridPane.margin>
+                                </StackPane>
+
+
+                                <StackPane styleClass="gridPaneNode" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                                    <Label fx:id="roomPriceLabel" style="-fx-font-size:12; -fx-text-fill : white;" text="Price / Day : " StackPane.alignment="BOTTOM_LEFT" />
+                                    <GridPane.margin>
+                                        <Insets right="20.0" />
+                                    </GridPane.margin>
+                                </StackPane>
+
+                                <StackPane styleClass="gridPaneNode" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                    <Label fx:id="totalDaysLabel" style="-fx-font-size:12; -fx-text-fill : white;" text="Total Days : " StackPane.alignment="BOTTOM_LEFT" />
+                                    <GridPane.margin>
+                                        <Insets right="20.0" />
+                                    </GridPane.margin>
+                                </StackPane>
+
+                                <StackPane styleClass="gridPaneNode" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                                    <Label fx:id="totalPriceLabel" style="-fx-font-size:12; -fx-text-fill : white;" text="Total Price :" StackPane.alignment="BOTTOM_LEFT" />
+                                    <GridPane.margin>
+                                        <Insets right="20.0" />
+                                    </GridPane.margin>
+                                </StackPane>
+
+
+                                <StackPane styleClass="gridPaneNode" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+                                    <Button mnemonicParsing="false" onAction="#handleCheckOutButton" prefHeight="15.0" prefWidth="80.0" style="-fx-background-color:#c1c3c9;" text="Check Out" StackPane.alignment="CENTER_RIGHT" />
+                                </StackPane>
+
+                                <StackPane styleClass="gridPaneNode" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+                                    <Button mnemonicParsing="false" onAction="#handleCancelButton" prefHeight="15.0" prefWidth="60.0" style="-fx-background-color:#c1c3c9;" text="Cancel" StackPane.alignment="CENTER_LEFT" />
+                                </StackPane>
+
+
+                                <padding>
+                                    <Insets bottom="10.0" />
+                                </padding>
+
+                            </GridPane>
+                        </AnchorPane>
+                    </top>
+
+                    <center>
+                        <HBox alignment="BOTTOM_CENTER" prefHeight="74.0" prefWidth="743.0" spacing="5.0" style="-fx-margin-top: 50px;" AnchorPane.leftAnchor="270.0" BorderPane.alignment="CENTER">
+                            <TextField fx:id="searchField" maxWidth="210.0" prefHeight="30.0" prefWidth="210.0" promptText="Room No" styleClass="searchBox" />
+                            <Button onAction="#handleSearch" styleClass="searchButton" text="Search" />
+                            <BorderPane.margin>
+                                <Insets top="40.0" />
+                            </BorderPane.margin>
+                        </HBox>
+                    </center>
+
+                    <bottom>
+                        <StackPane layoutX="9.0" layoutY="9.0" maxHeight="250.0" prefHeight="250.0" prefWidth="743.0" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="20.0" BorderPane.alignment="CENTER">
+                            <TableView fx:id="tableView" editable="true" maxHeight="200.0" maxWidth="700.0" prefWidth="700.0" StackPane.alignment="TOP_CENTER">
+                                <columns>
+
+                                    <TableColumn fx:id="revIdColumn" prefWidth="75" styleClass="tableCell" text="RESVN ID" />
+                                    <TableColumn fx:id="custIdColumn" prefWidth="75" styleClass="tableCell" text="CUST ID" />
+                                    <TableColumn fx:id="nameColumn" prefWidth="130" styleClass="tableCell" text=" CUSTOMER NAME" />
+                                    <TableColumn fx:id="roomNoColumn" prefWidth="70" styleClass="tableCell" text="ROOM NO" />
+                                    <TableColumn fx:id="roomTypeColumn" prefWidth="85" styleClass="tableCell" text="ROOM TYPE" />
+                                    <TableColumn fx:id="checkInTimeColumn" prefWidth="110" styleClass="tableCell" text="CHECK IN TIME" />
+                                    <TableColumn fx:id="priceColumn" prefWidth="80" styleClass="tableCell" text="PRICE/DAY" />
+                                    <TableColumn fx:id="actionColumn" prefWidth="75" styleClass="tableCell" text="ACTION" />
+
+                                </columns>
+                                <StackPane.margin>
+                                    <Insets top="20.0" />
+                                </StackPane.margin>
+                            </TableView>
+                            <BorderPane.margin>
+                                <Insets />
+                            </BorderPane.margin>
+                        </StackPane>
+                    </bottom>
+                </BorderPane>
+
+            </center>
+        </BorderPane>
+
+    </center>
+
+</BorderPane>

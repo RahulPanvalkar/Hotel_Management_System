@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefHeight="650.0" prefWidth="900.0" stylesheets="@../com/hms/Style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controller.customer.RoomDetailsController">
+
+    <left>
+        <AnchorPane prefHeight="650.0" style="-fx-background-color: #0f0f0f;" BorderPane.alignment="CENTER">
+            <fx:include source="CustomerDashboardNavbar.fxml" style="-fx-margin-top:20px;" />
+        </AnchorPane>
+    </left>
+
+    <center>
+        <BorderPane prefHeight="650.0" style="-fx-background-image: url('../images/hotel-room.jpg');" BorderPane.alignment="CENTER">
+            <top>
+                <fx:include source="../com/hms/UserBar.fxml" />
+            </top>
+
+            <center>
+                <StackPane layoutX="9.0" layoutY="9.0" maxHeight="350.0" prefHeight="400.0" prefWidth="743.0" BorderPane.alignment="TOP_CENTER">
+                    <TableView fx:id="tableView" maxHeight="300.0" maxWidth="480.0" prefHeight="300.0" StackPane.alignment="CENTER">
+                        <columns>
+
+                            <TableColumn fx:id="roomNoColumn" prefWidth="115" styleClass="tableCell" text="ROOM NO" />
+                            <TableColumn fx:id="roomTypeColumn" prefWidth="115" styleClass="tableCell" text="ROOM TYPE" />
+                            <TableColumn fx:id="priceColumn" prefWidth="115" styleClass="tableCell" text="PRICE" />
+                            <TableColumn fx:id="statusColumn" prefWidth="115" styleClass="tableCell" text="STATUS" />
+
+                        </columns>
+                    </TableView>
+                </StackPane>
+            </center>
+
+            <bottom>
+                <StackPane BorderPane.alignment="TOP_CENTER">
+                    <VBox alignment="CENTER" maxHeight="220.0" maxWidth="600.0" prefHeight="220.0" prefWidth="600.0" style="-fx-border-color: #c1c3c9;-fx-border-width: 2px;-fx-border-radius: 10px;" StackPane.alignment="TOP_CENTER">
+                        <Text fill="#c7c7c7" text="ABOUT ROOMS" underline="true">
+                            <VBox.margin>
+                                <Insets bottom="10.0" />
+                            </VBox.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                        </Text>
+                        <Text fill="#c7c7c7" styleClass="roomDetails" text="STANDARD : This is the basic room type. It includes essential amenities like a bed, bathroom and basic furnishings." wrappingWidth="600">
+                            <VBox.margin>
+                                <Insets bottom="10.0" />
+                            </VBox.margin>
+                        </Text>
+                        <Text fill="#c7c7c7" styleClass="roomDetails" text="DELUXE : A step up from the standard room, these deluxe rooms offer more space and includes additional amenities or features." wrappingWidth="600">
+                            <VBox.margin>
+                                <Insets bottom="10.0" />
+                            </VBox.margin>
+                        </Text>
+                        <Text fill="#c7c7c7" styleClass="roomDetails" text="SUITE : A suite is a larger, more luxurious room that includes a separate living area, bedroom, and a kitchenette or full kitchen." wrappingWidth="600">
+                            <VBox.margin>
+                                <Insets bottom="10.0" />
+                            </VBox.margin>
+                        </Text>
+                        <Text fill="#c7c7c7" styleClass="roomDetails" text="FAMILY : Designed to accommodate families, these rooms have extra beds or bunk beds." wrappingWidth="600" />
+                        <StackPane.margin>
+                            <Insets bottom="60.0" />
+                        </StackPane.margin>
+                        <padding>
+                            <Insets left="10.0" right="10.0" top="-10.0" />
+                        </padding>
+                    </VBox>
+                </StackPane>
+            </bottom>
+        </BorderPane>
+
+    </center>
+
+</BorderPane>

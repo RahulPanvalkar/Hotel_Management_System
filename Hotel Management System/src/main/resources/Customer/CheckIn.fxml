@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefHeight="650.0" prefWidth="900.0" stylesheets="@../com/hms/Style.css" xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml" fx:controller="com.controller.customer.CheckInController">
+
+    <left>
+        <AnchorPane prefHeight="650.0" style="-fx-background-color: #0f0f0f;" BorderPane.alignment="CENTER">
+            <fx:include source="CustomerDashboardNavbar.fxml" style="-fx-margin-top:20px;"/>
+        </AnchorPane>
+    </left>
+
+    <center>
+        <BorderPane prefHeight="650.0" style="-fx-background-image: url('../images/hotel-room.jpg');"
+                    BorderPane.alignment="CENTER">
+            <top>
+                <fx:include source="../com/hms/UserBar.fxml"/>
+            </top>
+
+            <center>
+
+                <AnchorPane fx:id="anchorPane" maxHeight="300.0" prefWidth="730.0" BorderPane.alignment="TOP_CENTER">
+                    <Label fx:id="message" alignment="CENTER" contentDisplay="CENTER" layoutX="290.0" layoutY="70.0"
+                           style="-fx-text-fill : white" text="Check In" textAlignment="CENTER"
+                           AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="30.0">
+                        <font>
+                            <Font size="16.0"/>
+                        </font>
+                    </Label>
+
+                    <GridPane alignment="CENTER" hgap="20" layoutX="80.0" layoutY="56.0" prefHeight="280.0"
+                              prefWidth="543.0"
+                              style="-fx-border-color: #c1c3c9; -fx-border-width: 2px; -fx-border-radius: 20px;"
+                              vgap="10.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0"
+                              AnchorPane.topAnchor="60.0">
+                        <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="255" minWidth="10.0" prefWidth="210"/>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="255" minWidth="10.0" prefWidth="110"/>
+                        </columnConstraints>
+                        <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0"/>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0"/>
+                            <RowConstraints maxHeight="30" minHeight="10.0" prefHeight="30"/>
+                            <RowConstraints maxHeight="30" minHeight="10.0" prefHeight="30"/>
+                            <RowConstraints maxHeight="30" minHeight="10.0" prefHeight="30"/>
+                            <RowConstraints maxHeight="30" minHeight="10.0" prefHeight="30"/>
+                        </rowConstraints>
+
+                        <StackPane styleClass="gridPaneNode">
+                            <Label fx:id="customerId" style="-fx-font-size:12; -fx-text-fill : white;"
+                                   text="Customer Id : " StackPane.alignment="BOTTOM_LEFT"/>
+                            <GridPane.margin>
+                                <Insets left="40.0"/>
+                            </GridPane.margin>
+                        </StackPane>
+
+                        <StackPane styleClass="gridPaneNode" GridPane.columnIndex="1">
+                            <Label style="-fx-font-size:12; -fx-text-fill : white;" text="Room No : "
+                                   StackPane.alignment="BOTTOM_LEFT"/>
+                            <GridPane.margin>
+                                <Insets right="20.0"/>
+                            </GridPane.margin>
+                        </StackPane>
+
+
+                        <StackPane styleClass="gridPaneNode" GridPane.rowIndex="1">
+                            <Label fx:id="custNameLabel" style="-fx-font-size:12; -fx-text-fill : white;" text="Name : "
+                                   StackPane.alignment="BOTTOM_LEFT"/>
+                            <padding>
+                                <Insets left="40.0"/>
+                            </padding>
+                        </StackPane>
+
+                        <StackPane styleClass="gridPaneNode" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                            <ChoiceBox fx:id="roomNo" onAction="#handleChoiceBoxSelection" prefWidth="80.0"
+                                       value="Select" StackPane.alignment="BOTTOM_LEFT">
+                                <items>
+                                    <FXCollections fx:factory="observableArrayList"/>
+                                </items>
+                            </ChoiceBox>
+                            <GridPane.margin>
+                                <Insets right="20.0"/>
+                            </GridPane.margin>
+                        </StackPane>
+
+                        <StackPane styleClass="gridPaneNode" GridPane.halignment="CENTER" GridPane.rowIndex="2"
+                                   GridPane.valignment="CENTER">
+                            <Label fx:id="custMobileLabel" style="-fx-font-size:12; -fx-text-fill : white;"
+                                   text="Mobile : " StackPane.alignment="BOTTOM_LEFT"/>
+                            <GridPane.margin>
+                                <Insets left="40.0"/>
+                            </GridPane.margin>
+                        </StackPane>
+
+                        <StackPane styleClass="gridPaneNode" GridPane.columnIndex="1" GridPane.halignment="CENTER"
+                                   GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                            <Label fx:id="roomTypeLabel" style="-fx-font-size:12; -fx-text-fill : white;"
+                                   text="Room Type : " StackPane.alignment="BOTTOM_LEFT"/>
+                            <GridPane.margin>
+                                <Insets right="20.0"/>
+                            </GridPane.margin>
+                        </StackPane>
+
+
+                        <StackPane styleClass="gridPaneNode" GridPane.rowIndex="3">
+                            <Label fx:id="custEmailLabel" style="-fx-font-size:12; -fx-text-fill : white;"
+                                   text="Email Id : " StackPane.alignment="BOTTOM_LEFT"/>
+                            <GridPane.margin>
+                                <Insets left="40.0"/>
+                            </GridPane.margin>
+                        </StackPane>
+
+
+                        <StackPane styleClass="gridPaneNode" GridPane.halignment="CENTER" GridPane.rowIndex="4"
+                                   GridPane.valignment="CENTER">
+                            <Label style="-fx-font-size:12; -fx-text-fill : white;" text="Check-In Date : "
+                                   StackPane.alignment="BOTTOM_LEFT"/>
+                            <DatePicker fx:id="checkInDate" maxHeight="3.0" prefHeight="5.0" prefWidth="103.0"
+                                        style="-fx-border-radius:5px;" StackPane.alignment="CENTER_RIGHT">
+                                <StackPane.margin>
+                                    <Insets right="20.0"/>
+                                </StackPane.margin>
+                            </DatePicker>
+                            <GridPane.margin>
+                                <Insets left="40.0"/>
+                            </GridPane.margin>
+                        </StackPane>
+
+
+                        <StackPane styleClass="gridPaneNode" GridPane.columnIndex="1" GridPane.halignment="CENTER"
+                                   GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                            <Label fx:id="roomPriceLabel" style="-fx-font-size:12; -fx-text-fill : white;"
+                                   text="Total Price : " StackPane.alignment="BOTTOM_LEFT"/>
+                            <GridPane.margin>
+                                <Insets right="20.0"/>
+                            </GridPane.margin>
+                        </StackPane>
+
+                        <StackPane styleClass="gridPaneNode" GridPane.columnIndex="1" GridPane.halignment="CENTER"
+                                   GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                            <Label style="-fx-font-size:12; -fx-text-fill : white;" text="Check-Out Date :"
+                                   StackPane.alignment="BOTTOM_LEFT"/>
+                            <DatePicker fx:id="checkOutDate" maxHeight="3.0" prefHeight="5.0" prefWidth="103.0"
+                                        style="-fx-border-radius:5px;" StackPane.alignment="CENTER_RIGHT">
+                                <StackPane.margin>
+                                    <Insets right="30.0"/>
+                                </StackPane.margin>
+                            </DatePicker>
+                            <GridPane.margin>
+                                <Insets right="20.0"/>
+                            </GridPane.margin>
+                        </StackPane>
+
+                        <StackPane styleClass="gridPaneNode" GridPane.columnSpan="2" GridPane.halignment="CENTER"
+                                   GridPane.rowIndex="5" GridPane.valignment="CENTER">
+                            <Button fx:id="checkInButton" mnemonicParsing="false" onAction="#handleCheckInButton"
+                                    prefHeight="26.0" prefWidth="84.0" style="-fx-background-color:#c1c3c9;"
+                                    text="CheckIn" StackPane.alignment="BOTTOM_CENTER"/>
+                        </StackPane>
+                        <padding>
+                            <Insets bottom="15.0"/>
+                        </padding>
+
+                    </GridPane>
+                    <BorderPane.margin>
+                        <Insets top="40.0"/>
+                    </BorderPane.margin>
+                </AnchorPane>
+
+            </center>
+        </BorderPane>
+
+    </center>
+
+</BorderPane>

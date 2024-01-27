@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefHeight="650.0" prefWidth="900.0" stylesheets="@../com/hms/Style.css"
+            xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.controller.employee.CheckInController">
+
+    <left>
+        <AnchorPane prefHeight="650.0" style="-fx-background-color: #0f0f0f;" BorderPane.alignment="CENTER">
+            <fx:include source="EmployeeDashboardNavbar.fxml" style="-fx-margin-top:20px;"/>
+        </AnchorPane>
+    </left>
+
+    <center>
+        <BorderPane prefHeight="650.0" style="-fx-background-image: url('../images/hotel-room.jpg');"
+                    BorderPane.alignment="CENTER">
+            <top>
+                <fx:include source="../com/hms/UserBar.fxml"/>
+            </top>
+
+            <center>
+
+                <BorderPane>
+                    <top>
+                        <AnchorPane maxHeight="300.0" prefWidth="730.0" BorderPane.alignment="CENTER">
+                            <Label fx:id="message" alignment="CENTER" contentDisplay="CENTER" layoutX="290.0"
+                                   layoutY="70.0" style="-fx-text-fill : white" text="Check In" textAlignment="CENTER"
+                                   AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0"
+                                   AnchorPane.topAnchor="30.0">
+                                <font>
+                                    <Font size="16.0"/>
+                                </font>
+                            </Label>
+
+                            <GridPane alignment="CENTER" hgap="20" layoutX="80.0" layoutY="56.0" prefHeight="280.0"
+                                      prefWidth="543.0"
+                                      style="-fx-border-color: #c1c3c9; -fx-border-width: 2px; -fx-border-radius: 20px;"
+                                      vgap="10.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0"
+                                      AnchorPane.topAnchor="60.0">
+                                <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="255" minWidth="10.0"
+                                                       prefWidth="210"/>
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="255" minWidth="10.0"
+                                                       prefWidth="110"/>
+                                </columnConstraints>
+                                <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0"/>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0"/>
+                                    <RowConstraints maxHeight="30" minHeight="10.0" prefHeight="30"/>
+                                    <RowConstraints maxHeight="30" minHeight="10.0" prefHeight="30"/>
+                                    <RowConstraints maxHeight="30" minHeight="10.0" prefHeight="30"/>
+                                    <RowConstraints maxHeight="30" minHeight="10.0" prefHeight="30"/>
+                                </rowConstraints>
+
+                                <StackPane styleClass="gridPaneNode">
+                                    <Label fx:id="customerId" style="-fx-font-size:12; -fx-text-fill : white;"
+                                           text="Customer Id : " StackPane.alignment="BOTTOM_LEFT"/>
+                                    <GridPane.margin>
+                                        <Insets left="40.0"/>
+                                    </GridPane.margin>
+                                </StackPane>
+
+                                <StackPane styleClass="gridPaneNode" GridPane.columnIndex="1">
+                                    <Label style="-fx-font-size:12; -fx-text-fill : white;" text="Room No : "
+                                           StackPane.alignment="BOTTOM_LEFT"/>
+                                    <GridPane.margin>
+                                        <Insets right="20.0"/>
+                                    </GridPane.margin>
+                                </StackPane>
+
+
+                                <StackPane styleClass="gridPaneNode" GridPane.rowIndex="1">
+                                    <Label fx:id="custNameLabel" style="-fx-font-size:12; -fx-text-fill : white;"
+                                           text="Name : " StackPane.alignment="BOTTOM_LEFT"/>
+                                    <TextField fx:id="custNameField" onKeyTyped="#handleKeyTyped" promptText="Name"
+                                               styleClass="userProfileTextField" visible="false"
+                                               StackPane.alignment="TOP_CENTER">
+                                        <StackPane.margin>
+                                            <Insets left="40.0"/>
+                                        </StackPane.margin>
+                                    </TextField>
+                                    <padding>
+                                        <Insets left="40.0"/>
+                                    </padding>
+                                </StackPane>
+
+                                <StackPane styleClass="gridPaneNode" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                    <ChoiceBox fx:id="roomNo" onAction="#handleChoiceBoxSelection" prefWidth="80.0"
+                                               value="Select" StackPane.alignment="BOTTOM_LEFT">
+                                        <items>
+                                            <FXCollections fx:factory="observableArrayList"/>
+                                        </items>
+                                    </ChoiceBox>
+                                    <GridPane.margin>
+                                        <Insets right="20.0"/>
+                                    </GridPane.margin>
+                                </StackPane>
+
+                                <StackPane styleClass="gridPaneNode" GridPane.halignment="CENTER" GridPane.rowIndex="2"
+                                           GridPane.valignment="CENTER">
+                                    <Label fx:id="custMobileLabel" style="-fx-font-size:12; -fx-text-fill : white;"
+                                           text="Mobile : " StackPane.alignment="BOTTOM_LEFT"/>
+                                    <TextField fx:id="custMobileField" onKeyTyped="#handleKeyTyped" promptText="Mobile"
+                                               styleClass="userProfileTextField" visible="false"
+                                               StackPane.alignment="TOP_CENTER">
+                                        <StackPane.margin>
+                                            <Insets left="40.0"/>
+                                        </StackPane.margin>
+                                    </TextField>
+                                    <GridPane.margin>
+                                        <Insets left="40.0"/>
+                                    </GridPane.margin>
+                                </StackPane>
+
+                                <StackPane styleClass="gridPaneNode" GridPane.columnIndex="1"
+                                           GridPane.halignment="CENTER" GridPane.rowIndex="2"
+                                           GridPane.valignment="CENTER">
+                                    <Label fx:id="roomTypeLabel" style="-fx-font-size:12; -fx-text-fill : white;"
+                                           text="Room Type : " StackPane.alignment="BOTTOM_LEFT"/>
+                                    <GridPane.margin>
+                                        <Insets right="20.0"/>
+                                    </GridPane.margin>
+                                </StackPane>
+
+
+                                <StackPane styleClass="gridPaneNode" GridPane.rowIndex="3">
+                                    <Label fx:id="custEmailLabel" style="-fx-font-size:12; -fx-text-fill : white;"
+                                           text="Email Id : " StackPane.alignment="BOTTOM_LEFT"/>
+                                    <TextField fx:id="custEmailField" onKeyTyped="#handleKeyTyped" promptText="Email"
+                                               styleClass="userProfileTextField" visible="false"
+                                               StackPane.alignment="TOP_CENTER">
+                                        <StackPane.margin>
+                                            <Insets left="40.0"/>
+                                        </StackPane.margin>
+                                    </TextField>
+                                    <GridPane.margin>
+                                        <Insets left="40.0"/>
+                                    </GridPane.margin>
+                                </StackPane>
+
+
+                                <StackPane styleClass="gridPaneNode" GridPane.halignment="CENTER" GridPane.rowIndex="4"
+                                           GridPane.valignment="CENTER">
+                                    <Label fx:id="custAddressLabel" style="-fx-font-size:12; -fx-text-fill : white;"
+                                           text="Address : " StackPane.alignment="BOTTOM_LEFT"/>
+                                    <TextField fx:id="custAddressField" onKeyTyped="#handleKeyTyped"
+                                               promptText="Address" styleClass="userProfileTextField" visible="false"
+                                               StackPane.alignment="TOP_CENTER">
+                                        <StackPane.margin>
+                                            <Insets left="40.0"/>
+                                        </StackPane.margin>
+                                    </TextField>
+                                    <GridPane.margin>
+                                        <Insets left="40.0"/>
+                                    </GridPane.margin>
+                                </StackPane>
+
+
+                                <StackPane styleClass="gridPaneNode" GridPane.columnIndex="1"
+                                           GridPane.halignment="CENTER" GridPane.rowIndex="3"
+                                           GridPane.valignment="CENTER">
+                                    <Label fx:id="roomPriceLabel" style="-fx-font-size:12; -fx-text-fill : white;"
+                                           text="Price/Day : " StackPane.alignment="BOTTOM_LEFT"/>
+                                    <GridPane.margin>
+                                        <Insets right="20.0"/>
+                                    </GridPane.margin>
+                                </StackPane>
+
+                                <StackPane styleClass="gridPaneNode" GridPane.columnIndex="1"
+                                           GridPane.halignment="CENTER" GridPane.rowIndex="4"
+                                           GridPane.valignment="CENTER">
+                                    <Label fx:id="checkInTimeLabel" style="-fx-font-size:12; -fx-text-fill : white;"
+                                           text="Date :" StackPane.alignment="BOTTOM_LEFT"/>
+                                    <GridPane.margin>
+                                        <Insets right="20.0"/>
+                                    </GridPane.margin>
+                                </StackPane>
+
+                                <StackPane styleClass="gridPaneNode" GridPane.halignment="CENTER" GridPane.rowIndex="5"
+                                           GridPane.valignment="CENTER">
+                                    <Button fx:id="checkInButton" mnemonicParsing="false" onAction="#handleCheckInButton" prefHeight="15.0"
+                                            prefWidth="60.0" style="-fx-background-color:#c1c3c9;" text="CheckIn"
+                                            StackPane.alignment="CENTER_RIGHT"/>
+                                    <Button fx:id="saveButton" mnemonicParsing="false" visible="false" onAction="#handleSaveButton"
+                                            prefHeight="15.0" prefWidth="60.0" style="-fx-background-color:#c1c3c9;"
+                                            text="Save" StackPane.alignment="CENTER_RIGHT"/>
+                                </StackPane>
+
+                                <StackPane styleClass="gridPaneNode" GridPane.columnIndex="1"
+                                           GridPane.halignment="CENTER" GridPane.rowIndex="5"
+                                           GridPane.valignment="CENTER">
+                                    <Button fx:id="addButton" mnemonicParsing="false" onAction="#handleAddButton" prefHeight="15.0"
+                                            prefWidth="60.0" style="-fx-background-color:#c1c3c9;" text="Add"
+                                            StackPane.alignment="CENTER_LEFT"/>
+                                    <Button fx:id="cancelButton" mnemonicParsing="false" visible="false" onAction="#handleCancelButton"
+                                            prefHeight="15.0" prefWidth="60.0" style="-fx-background-color:#c1c3c9;"
+                                            text="Cancel" StackPane.alignment="CENTER_LEFT"/>
+                                </StackPane>
+                                <padding>
+                                    <Insets bottom="15.0"/>
+                                </padding>
+
+                            </GridPane>
+                        </AnchorPane>
+                    </top>
+
+                    <center>
+                        <HBox alignment="BOTTOM_CENTER" prefHeight="147.0" prefWidth="743.0" spacing="5.0"
+                              style="-fx-margin-top:50px;" AnchorPane.leftAnchor="270.0" BorderPane.alignment="CENTER">
+                            <TextField fx:id="searchField" onKeyTyped="#handleKeyTyped"
+                                       promptText="Mobile no / Email id" styleClass="searchBox"/>
+                            <Button onAction="#handleSearch" styleClass="searchButton" text="Search"/>
+                        </HBox>
+                    </center>
+
+                    <bottom>
+                        <StackPane layoutX="9.0" layoutY="9.0" maxHeight="400.0" prefHeight="214.0" prefWidth="743.0"
+                                   AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="120.0"
+                                   AnchorPane.topAnchor="20.0">
+                            <TableView fx:id="tableView" maxHeight="80.0" maxWidth="650.0"
+                                       prefWidth="650.0" StackPane.alignment="TOP_CENTER">
+                                <columns>
+                                    <TableColumn fx:id="custIdColumn" styleClass="tableCell" text="CUST_ID"/>
+                                    <TableColumn fx:id="nameColumn" prefWidth="110.0" styleClass="tableCell"
+                                                 text="NAME"/>
+                                    <TableColumn fx:id="emailColumn" prefWidth="150.0" styleClass="tableCell"
+                                                 text="EMAIL"/>
+                                    <TableColumn fx:id="mobileColumn" prefWidth="100.0" styleClass="tableCell"
+                                                 text="MOBILE"/>
+                                    <TableColumn fx:id="addressColumn" prefWidth="140.0" styleClass="tableCell"
+                                                 text="ADDRESS"/>
+                                    <TableColumn fx:id="actionColumn" prefWidth="70.0" styleClass="tableCell"
+                                                 text="ACTION"/>
+                                </columns>
+                                <StackPane.margin>
+                                    <Insets top="20.0"/>
+                                </StackPane.margin>
+                            </TableView>
+                            <BorderPane.margin>
+                                <Insets/>
+                            </BorderPane.margin>
+                        </StackPane>
+                    </bottom>
+                </BorderPane>
+
+            </center>
+        </BorderPane>
+
+    </center>
+
+</BorderPane>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.text.Text?>
+<AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" layoutX="9.0" layoutY="9.0"
+            prefHeight="28.0" prefWidth="750.0"
+            BorderPane.alignment="CENTER" fx:controller="com.hms.UserBarController">
+    <ImageView fx:id="userIcon" fitHeight="20.0" fitWidth="20.0" layoutX="730.0" layoutY="4.0"
+               onMouseClicked="#handleLogout" pickOnBounds="true" preserveRatio="true"
+               styleClass="userNameIcon" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="700.0"
+               AnchorPane.topAnchor="4.0">
+        <Image url="@../../images/userName.png"/>
+    </ImageView>
+
+    <Text onMouseClicked="#handleViewProfile" fx:id="username" layoutX="445.0" styleClass="username" text="username"
+          AnchorPane.bottomAnchor="3.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="3.0"/>
+</AnchorPane>

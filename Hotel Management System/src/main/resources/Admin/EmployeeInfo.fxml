@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="650.0" prefWidth="900.0" stylesheets="@../com/hms/Style.css"
+            xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.controller.admin.EmployeeInfoController">
+
+    <left>
+        <AnchorPane prefHeight="612.0" prefWidth="155.0" style="-fx-background-color: #0f0f0f;"
+                    BorderPane.alignment="CENTER">
+            <fx:include source="AdminDashboardNavbar.fxml"/>
+        </AnchorPane>
+    </left>
+
+    <center>
+        <BorderPane prefHeight="650.0" style="-fx-background-image: url('../images/hotel-room.jpg');"
+                    BorderPane.alignment="CENTER">
+            <top>
+                <fx:include source="../com/hms/UserBar.fxml"/>
+            </top>
+
+
+            <center>
+                <HBox alignment="BOTTOM_CENTER" maxHeight="50.0" prefHeight="50.0" prefWidth="743.0" spacing="5.0"
+                      BorderPane.alignment="TOP_CENTER">
+                    <TextField fx:id="searchField" promptText="Employee Id" styleClass="searchBox"/>
+                    <Button onAction="#handleSearch" styleClass="searchButton" text="Search"/>
+                    <BorderPane.margin>
+                        <Insets top="50.0"/>
+                    </BorderPane.margin>
+                </HBox>
+            </center>
+
+            <bottom>
+
+                <StackPane layoutX="9.0" layoutY="9.0" maxHeight="600.0" prefHeight="500.0" prefWidth="743.0"
+                           AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="20.0"
+                           BorderPane.alignment="TOP_CENTER">
+                    <children>
+                        <TableView fx:id="tableView" maxHeight="340.0" maxWidth="680.0" prefHeight="340.0"
+                                   prefWidth="680.0" StackPane.alignment="TOP_CENTER">
+                            <columns>
+                                <TableColumn fx:id="idColumn" prefWidth="75" styleClass="tableCell" text="ID"/>
+                                <TableColumn fx:id="nameColumn" prefWidth="90.0" styleClass="tableCell" text="NAME"/>
+                                <TableColumn fx:id="emailColumn" prefWidth="140.0" styleClass="tableCell" text="EMAIL"/>
+                                <TableColumn fx:id="mobileColumn" prefWidth="75.0" styleClass="tableCell"
+                                             text="MOBILE"/>
+                                <TableColumn fx:id="addressColumn" prefWidth="130.0" styleClass="tableCell"
+                                             text="ADDRESS"/>
+                                <TableColumn fx:id="designationColumn" prefWidth="85.0" styleClass="tableCell"
+                                             text="DESIGNATION"/>
+                                <TableColumn fx:id="actionColumn" prefWidth="85" styleClass="tableCell" text="ACTION"/>
+                            </columns>
+                        </TableView>
+                    </children>
+
+                </StackPane>
+
+            </bottom>
+        </BorderPane>
+
+    </center>
+
+</BorderPane>

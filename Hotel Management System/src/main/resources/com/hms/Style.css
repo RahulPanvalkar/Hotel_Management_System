@@ -1,0 +1,196 @@
+
+.root{
+    -fx-background-image: url("../../images/hotel-room.jpg");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: cover;
+    -fx-border-color: black;
+    -fx-border-width: 1px;
+}
+
+.username{
+    -fx-font-weight: bold;
+    -fx-font-size: 16;
+    -fx-fill: white;
+}
+
+.username:hover{
+    -fx-fill: #008080;
+}
+
+.gridPaneNode{
+    -fx-margin: 10px;
+}
+
+.topAnchorPane{
+    -fx-background-color: #F5F5F5;
+    -fx-pref-height : 26px;
+    -fx-border-color: black;
+    -fx-border-width: 0px 0px 1px 0px;
+    -fx-border-radius: 2px;
+}
+
+.titleLabel{
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 32px;
+    -fx-alignment: center;
+}
+
+.loginButtons{
+    -fx-font-size: 18;
+    -fx-pref-width: 150px;
+    -fx-pref-height: 30px;
+     -fx-background-color: transparent;
+     -fx-border-color: #c1c3c9;
+     -fx-font-weight: bold;
+     -fx-text-fill: white;
+     -fx-border-width: 2px;
+     -fx-border-radius: 10px;
+}
+
+#loginButton, #registerButton{
+    -fx-background-color: #008080;
+    -fx-text-fill : white;
+}
+
+#userId, #password{
+    -fx-background-color: transparent;
+    -fx-border-color: #008080;
+    -fx-font-size: 14px;
+    -fx-text-fill: #0e0b0c;
+    -fx-border-width: 0px 0px 2px 0px;
+}
+
+.registrationForm {
+    -fx-background-color: transparent;
+    -fx-border-color: #c1c3c9;
+    -fx-font-size: 14px;
+    -fx-text-fill: #fff;
+    -fx-border-width: 0px 0px 2px 0px;
+    -fx-alignment: center;
+    -fx-max-width: 170px;
+    -fx-pref-height: 20px;
+    -fx-border-radius: 2px;
+}
+
+.round-button {
+    -fx-text-fill : white;
+    -fx-background-radius: 50%;
+    -fx-background-color: #008080;
+    -fx-min-width: 25px;
+    -fx-min-height: 25px;
+    -fx-max-width: 25px;
+    -fx-max-height: 25px;
+    -fx-font-size: 10;
+}
+
+.usersIcon{
+    -fx-alignment : center;
+    -fx-background-position: center;
+    -fx-background-radius: 50%;
+    -fx-min-width: 20px;
+    -fx-min-height: 20px;
+    -fx-max-width: 20px;
+    -fx-max-height: 20px;
+}
+
+.userNameIcon{
+    -fx-background-position: center;
+    -fx-background-radius: 50%;
+    -fx-min-width: 20px;
+    -fx-min-height: 20px;
+    -fx-max-width: 20px;
+    -fx-max-height: 20px;
+}
+
+.pwdIcon{
+    -fx-background-position: center;
+    -fx-background-radius: 50%;
+    -fx-min-width: 50px;
+    -fx-min-height: 50px;
+    -fx-max-width: 50px;
+    -fx-max-height: 50px;
+}
+
+.menu-button {
+    -fx-background-color: white;
+    -fx-text-fill: #131414;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-min-width: 120px;
+    -fx-min-height: 70px;
+    -fx-background-radius: 50 0 0 50; /* Top-left, top-right, bottom-right, bottom-left */
+    -fx-background-insets: 0 1 1 0;     /* Top, right, bottom, left */
+}
+
+.menu-button:hover {
+    -fx-background-color: #008080;
+    -fx-text-fill: white;
+}
+
+.greetingLabel {
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+}
+
+.clicked-button {
+    -fx-background-color: #008080;
+    -fx-text-fill: white;
+}
+
+.tableCell {
+    -fx-font-size: 10.5px;
+    -fx-alignment: center;
+}
+
+.userProfileTextField {
+    -fx-background-color: transparent;
+    -fx-border-color: #c1c3c9;
+    -fx-font-size: 12px;
+    -fx-text-fill: #fff;
+    -fx-border-width: 0px 0px 2px 0px;
+    -fx-max-width: 150px;
+    -fx-pref-height: 20px;
+    -fx-border-radius: 10px;
+}
+
+.dropDownListBox{
+    /*-fx-background-color: transparent;
+    -fx-border-width: 0px 0px 2px 0px;
+    -fx-border-color: #c1c3c9;
+    -fx-border-radius: 10px;*/
+    -fx-font-size: 14px;
+    -fx-text-fill: #fff;
+    -fx-text-alignment:center;
+}
+
+.userProfileLabels{
+    -fx-text-fill : white;
+    -fx-font-weight: bold;
+}
+
+.searchBox{
+    -fx-background-color: transparent;
+    -fx-border-color: #c1c3c9;
+    -fx-font-size: 12px;
+    -fx-text-fill: white;
+    -fx-border-width: 2px;
+    -fx-max-width: 150px;
+    -fx-pref-height: 20px;
+    -fx-border-radius: 10px;
+}
+.searchButton{
+    -fx-background-color: transparent;
+    -fx-border-color: #c1c3c9;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-border-width: 2px;
+    -fx-border-radius: 10px;
+}
+
+.roomDetails{
+    -fx-font-size: 12px;
+    -fx-text-fill: #c1c3c9;
+}

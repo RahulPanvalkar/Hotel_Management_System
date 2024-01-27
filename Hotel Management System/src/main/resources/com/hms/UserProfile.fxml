@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="270" prefWidth="380.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/17.0.2-ea"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hms.UserProfileController">
+
+    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="80.0" layoutY="22.0" style="-fx-text-fill : white"
+           text="Profile" textAlignment="CENTER" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="80.0">
+        <font>
+            <Font size="20.0"/>
+        </font>
+    </Label>
+
+    <GridPane alignment="CENTER" hgap="10" layoutX="80.0" layoutY="70.0" AnchorPane.leftAnchor="30.0"
+              AnchorPane.rightAnchor="30.0">
+        <columnConstraints>
+            <ColumnConstraints maxWidth="200.0" minWidth="10.0" prefWidth="150"/>
+            <ColumnConstraints maxWidth="150.0" minWidth="10.0" prefWidth="150"/>
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0"/>
+            <RowConstraints minHeight="10.0" prefHeight="30.0"/>
+            <RowConstraints minHeight="10.0" prefHeight="30.0"/>
+            <RowConstraints minHeight="10.0" prefHeight="30.0"/>
+            <RowConstraints minHeight="10.0" prefHeight="30.0"/>
+        </rowConstraints>
+
+        <StackPane alignment="CENTER_RIGHT" styleClass="gridPaneNode">
+            <Label styleClass="userProfileLabels" text="User ID:" textAlignment="LEFT"/>
+        </StackPane>
+
+        <StackPane alignment="CENTER_LEFT" styleClass="gridPaneNode" GridPane.columnIndex="1">
+            <Label fx:id="idLabel" styleClass="userProfileLabels" text="Your Id"/>
+        </StackPane>
+
+        <StackPane alignment="CENTER_RIGHT" styleClass="gridPaneNode" GridPane.rowIndex="1">
+            <Label styleClass="userProfileLabels" text="Name:"/>
+        </StackPane>
+
+        <StackPane alignment="CENTER_LEFT" styleClass="gridPaneNode" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Label fx:id="nameLabel" prefHeight="18.0" styleClass="userProfileLabels" text="Your Name"/>
+            <TextField fx:id="nameField" onKeyTyped="#handleKeyTyped" styleClass="userProfileTextField"
+                       visible="false"/>
+        </StackPane>
+
+        <StackPane alignment="CENTER_RIGHT" styleClass="gridPaneNode" GridPane.rowIndex="2">
+            <Label prefHeight="18.0" styleClass="userProfileLabels" text="Email:"/>
+        </StackPane>
+
+        <StackPane alignment="CENTER_LEFT" styleClass="gridPaneNode" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <Label fx:id="emailLabel" prefHeight="18.0" styleClass="userProfileLabels" text="Your Email"/>
+            <TextField fx:id="emailField" onKeyTyped="#handleKeyTyped"
+                       styleClass="userProfileTextField" visible="false"/>
+        </StackPane>
+
+        <StackPane alignment="CENTER_RIGHT" styleClass="gridPaneNode" GridPane.rowIndex="3">
+            <Label prefHeight="18.0" styleClass="userProfileLabels" text="Mobile:"/>
+        </StackPane>
+
+        <StackPane alignment="CENTER_LEFT" styleClass="gridPaneNode" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <Label fx:id="mobileLabel" styleClass="userProfileLabels" text="Your mobile no"/>
+            <TextField fx:id="mobileField" onKeyTyped="#handleKeyTyped"
+                       styleClass="userProfileTextField" visible="false"/>
+        </StackPane>
+
+        <HBox alignment="CENTER_RIGHT" styleClass="gridPaneNode" GridPane.rowIndex="4">
+            <Region HBox.hgrow="ALWAYS"/>
+            <StackPane>
+                <Button fx:id="editButton" mnemonicParsing="false" onAction="#handleEditButtonClicked"
+                        style="-fx-background-color:#c1c3c9;" text="Edit"/>
+                <Button fx:id="saveButton" mnemonicParsing="false" onAction="#handleSaveButtonClicked"
+                        style="-fx-background-color:#c1c3c9" text="Save" visible="false"/>
+            </StackPane>
+            <GridPane.margin>
+                <Insets top="10.0"/>
+            </GridPane.margin>
+        </HBox>
+        <HBox alignment="CENTER_LEFT" styleClass="gridPaneNode" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <StackPane>
+                <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#handleCancelButtonClicked"
+                        style="-fx-background-color:#c1c3c9" text="Cancel" visible="false"/>
+                <Button fx:id="closeButton" mnemonicParsing="false" onAction="#handleCloseButtonClicked"
+                        style="-fx-background-color:#c1c3c9" text="Close"/>
+            </StackPane>
+            <Region HBox.hgrow="ALWAYS"/>
+            <GridPane.margin>
+                <Insets top="10.0"/>
+            </GridPane.margin>
+        </HBox>
+
+    </GridPane>
+
+    <Label fx:id="message" alignment="CENTER" style="-fx-text-fill : #ff3333; -fx-font-size : 12;"
+           text="Field cannot be empty" textAlignment="CENTER" visible="false" AnchorPane.leftAnchor="80.0"
+           AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="235.0"/>
+
+</AnchorPane>

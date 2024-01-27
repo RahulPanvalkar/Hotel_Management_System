@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.control.Label?>
+
+<BorderPane prefHeight="650.0" prefWidth="900.0" stylesheets="@../com/hms/Style.css"
+            xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.controller.customer.CustomerDashboardController">
+
+    <left>
+        <AnchorPane prefHeight="650.0" style="-fx-background-color: #0f0f0f;" BorderPane.alignment="CENTER">
+            <fx:include source="CustomerDashboardNavbar.fxml" style="-fx-margin-top:20px;"/>
+        </AnchorPane>
+    </left>
+
+    <center>
+        <BorderPane prefHeight="650.0" style="-fx-background-image: url('../images/hotel-room.jpg');"
+                    BorderPane.alignment="CENTER">
+            <top>
+                <fx:include source="../com/hms/UserBar.fxml"/>
+            </top>
+
+            <center>
+
+                <StackPane>
+                    <VBox alignment="CENTER" spacing="10" style="-fx-padding: 5;">
+                        <Label fx:id="greetLabel" styleClass="greetingLabel" textAlignment="CENTER"/>
+                        <Label styleClass="greetingLabel" text="Welcome to Our" textAlignment="CENTER"/>
+                        <Label styleClass="greetingLabel" text="Hotel Management System" textAlignment="CENTER"/>
+                    </VBox>
+                </StackPane>
+
+            </center>
+        </BorderPane>
+
+    </center>
+
+</BorderPane>

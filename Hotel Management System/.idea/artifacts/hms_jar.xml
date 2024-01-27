@@ -1,0 +1,29 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="hms:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/hms_jar</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="com.hms.Main" />
+        <option name="description" value="" />
+        <option name="height" value="650" />
+        <option name="htmlPlaceholderId" value="" />
+        <option name="title" value="Hotel Management System" />
+        <option name="vendor" value="" />
+        <option name="version" value="1.0" />
+        <option name="width" value="900" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="module-output" name="hms" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-graphics/17.0.6/javafx-graphics-17.0.6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-controls/17.0.6/javafx-controls-17.0.6-win.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../mysql-connector-j-8.0.33/mysql-connector-j-8.0.33.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-graphics/17.0.6/javafx-graphics-17.0.6-win.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-controls/17.0.6/javafx-controls-17.0.6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-base/17.0.6/javafx-base-17.0.6-win.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-fxml/17.0.6/javafx-fxml-17.0.6-win.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-base/17.0.6/javafx-base-17.0.6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-fxml/17.0.6/javafx-fxml-17.0.6.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

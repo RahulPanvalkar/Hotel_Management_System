@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane prefHeight="650.0" prefWidth="900.0" stylesheets="@../com/hms/Style.css"
+            xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.controller.customer.CustomerLoginController">
+    <Rectangle fill="#00000088" height="650.0" width="900.0"/> <!-- Semi-transparent overlay -->
+
+    <left>
+        <AnchorPane prefHeight="650.0" prefWidth="320.0" BorderPane.alignment="CENTER">
+            <Text fill="WHITE" layoutX="42.0" layoutY="58.0" strokeType="OUTSIDE" text="HOTEL MANAGEMENT">
+                <font>
+                    <Font name="Franklin Gothic Heavy" size="24.0"/>
+                </font>
+            </Text>
+            <Text layoutX="117.0" layoutY="89.0" style="-fx-fill : white; -fx-font-size : 24px" text="SYSTEM"/>
+        </AnchorPane>
+    </left>
+
+    <center>
+        <AnchorPane prefHeight="650.0" prefWidth="580.0" style="-fx-background-color: #F5F5F5;"
+                    BorderPane.alignment="CENTER">
+            <ImageView fitHeight="36.0" fitWidth="42.0" layoutX="271.0" layoutY="93.0" pickOnBounds="true"
+                       preserveRatio="true" style="-fx-alignment : center" styleClass="usersIcon"
+                       AnchorPane.leftAnchor="271.0" AnchorPane.rightAnchor="271.0">
+                <Image url="@../images/users.png"/>
+            </ImageView>
+            <Label alignment="CENTER" layoutY="140.0"
+                   style="-fx-text-fill : #008080; -fx-font-size: 20px; -fx-font-weight : bold; -fx-font-family: Arial;"
+                   text="Customer Login" textAlignment="CENTER" AnchorPane.leftAnchor="80.0"
+                   AnchorPane.rightAnchor="80.0">
+            </Label>
+
+            <ImageView fitHeight="18.0" fitWidth="18.0" layoutX="188.0" layoutY="202.0" pickOnBounds="true"
+                       preserveRatio="true" styleClass="userNameIcon">
+                <Image url="@../images/userName.png"/>
+            </ImageView>
+            <TextField fx:id="userId" layoutX="217.0" layoutY="190.0" promptText="UserName"/>
+
+            <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="188.0" layoutY="250.0" pickOnBounds="true"
+                       preserveRatio="true" styleClass="pwdIcon">
+                <Image url="@../images/pwd.png"/>
+            </ImageView>
+            <PasswordField fx:id="password" layoutX="217.0" layoutY="240.0" promptText="Password"/>
+
+            <Button fx:id="loginButton" layoutX="231.0" layoutY="298.0" onAction="#handleLoginButton"
+                    text="Login"/>
+            <Button fx:id="registerButton" layoutX="288.0" layoutY="298.0" onAction="#onRegisterButton"
+                    text="Register"/>
+            <Hyperlink alignment="CENTER" contentDisplay="CENTER" layoutX="100.0" layoutY="544.0"
+                       onAction="#handleForgetPassword" style="-fx-text-fill: #008080;" text="Forget Your Password?"
+                       AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0"/>
+
+            <Label fx:id="message" alignment="CENTER" contentDisplay="CENTER" layoutY="340.0"
+                   style="-fx-text-fill : red; -fx-font-size : 12" text="Invalid Username or Password"
+                   textAlignment="CENTER" visible="false" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="80.0">
+            </Label>
+        </AnchorPane>
+    </center>
+</BorderPane>
